@@ -40,44 +40,55 @@
 
 // // localStorage.clear()
 
-document.addEventListener("DOMContentLoaded", () => {
-    let mainEle = document.createElement("div");
-    mainEle.id = "mainblock";
+// document.addEventListener("DOMContentLoaded", () => {
+//     let mainEle = document.createElement("div");
+//     mainEle.id = "mainblock";
   
-    let topEle = document.createElement("div");
-    topEle.className = "topBlock";
+//     let topEle = document.createElement("div");
+//     topEle.className = "topBlock";
   
-    let bottomElement = document.createElement("div");
-    bottomElement.className = "bottomBlock";
+//     let bottomElement = document.createElement("div");
+//     bottomElement.className = "bottomBlock";
   
-    mainEle.appendChild(topEle);
-    mainEle.appendChild(bottomElement);
+//     mainEle.appendChild(topEle);
+//     mainEle.appendChild(bottomElement);
   
-    let img = document.createElement("img");
-    img.src = "https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg";
-    img.width="300"
-    img.height="300"
-    img.style.objectFit="cover"
-    topEle.appendChild(img);
+//     let img = document.createElement("img");
+//     img.src = "https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg";
+//     img.width="300"
+//     img.height="300"
+//     img.style.objectFit="cover"
+//     topEle.appendChild(img);
   
-    document.body.appendChild(mainEle);
-    let h1=document.createElement("h1")
-    h1.innerText="CAT"
-    let btn=document.createElement("button")
-    btn.innerText="View More";
-    bottomElement.appendChild(h1)
-    bottomElement.appendChild(btn)
-  });
+//     document.body.appendChild(mainEle);
+//     let h1=document.createElement("h1")
+//     h1.innerText="CAT"
+//     let btn=document.createElement("button")
+//     btn.innerText="View More";
+//     bottomElement.appendChild(h1)
+//     bottomElement.appendChild(btn)
+//   });
 
 
 
 let form = document.querySelector("form");
 let username = document.getElementById("uName");
 let password = document.getElementById("uPass");
+let check = document.getElementById("check");
+let show = document.getElementById("show");
 
 let gender = document.getElementsByName("gender");
 // console.log(gender);
 
+check.addEventListener("click" , (event)=>{
+    if(event.target.checked == true){
+        password.setAttribute("type" , "text");
+        show.innerText = "hide password";
+    }else{
+        password.setAttribute("type" , "password");
+        show.innerText="show password";
+    }
+})
 form.addEventListener("submit" , event=>{
     event.preventDefault();
     let un = username.value;
