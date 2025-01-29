@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Table</title>
+</head>
+<body>
+    <table border="2" cellpadding="10px" cellspacing="0px">
+        <thead>
+            <tr>
+                <th>Sl. No</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>City</th>
+                <th>Area</th>
+            </tr>
+        </thead>
+        <tbody id="store">
+        </tbody>
+    </table>
+    
+    <script>
+        let employees = [
+           {
+            empid: 1,
+            empname: "Srijesh",
+            empcompany: "Wipro",
+            empsalary: 23445,
+            empaddress: {
+                empcity: "Mbnr",
+                emparea: "Addakal"
+            }
+           },
+           {
+            empid: 2,
+            empname: "Nithin",
+            empcompany: "Facebook",
+            empsalary: 23445,
+            empaddress: {
+                empcity: "Nirmal",
+                emparea: "Rampur"
+            }
+           }
+        ];
+
+        let store = document.getElementById("store");
+
+        employees.forEach(user => {
+            store.innerHTML += `
+            <tr>
+                <td>${user.empid}</td>
+                <td>${user.empname}</td>
+                <td>${user.empcompany}</td>
+                <td>${user.empsalary}</td>
+                <td>${user.empaddress.empcity}</td>
+                <td>${user.empaddress.emparea}</td>
+            </tr>`;
+        });
+    </script>
+</body>
+</html>
